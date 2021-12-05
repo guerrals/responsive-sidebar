@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Spartan:wght@400;700&display=swap");
+
+:root {
+  --body-bg-color: #dce4e3;
+  --green: #18c29c;
+  --light-green: #8ed7c6;
+  --light-grey: #dce4e3;
+  --text-color: #084236;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400, 500;
+  font-size: 16px;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--body-bg-color);
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  position: absolute;
+  width: calc(100% - 1rem);
+  height: 100%;
+  left: 5rem;
+}
+
+main p {
+  padding: 0 0 0 25px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+li {
+  position: relative;
+  border-radius: 10px;
+  padding: 10px;
+  vertical-align: middle;
+}
+
+li img {
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+li .text {
+  position: absolute;
+  opacity: 0;
+  padding-left: 14px;
+  padding-top: 5px;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar.active li .text {
+  opacity: 1;
+}
+
+li:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: nowrap;
+  width: calc(100% - 20px);
+  border-radius: 0px;
+  background-color: var(--light-green);
+}
+
+li:last-child img {
+  padding: 0;
+}
+
+.content {
+  position: absolute;
+  height: 100%;
+  width: calc(100% - 5.7rem);
+  left: 5.7rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar.active ~ .content {
+  width: calc(100% - 16.7rem);
+  left: 16.7rem;
+}
+
+.sidebar {
+  position: fixed;
+  height: 100%;
+  width: 4rem;
+  background-color: var(--green);
+  padding: 0px 14px;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar .search {
+  background-color: var(--light-green);
+}
+
+.sidebar.active {
+  width: 15rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar .menu-content {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+}
+
+.sidebar .menu-content .button {
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  left: 17%;
+}
+
+.sidebar.active .menu-content .button {
+  transition: all 0.5s ease-in-out;
+  left: 88%;
+}
+
+.sidebar .menu-content .logo {
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar.active .menu-content .logo {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar .profile {
+  position: relative;
+  width: 100%;
+}
+
+.sidebar .profile .logout {
+  position: absolute;
+  left: 88%;
+  bottom: 8px;
+  left: calc(100% - 40px);
+  transform: translateX(-50%);
+}
+
+.sidebar .profile .profile-details {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar .profile .profile-details .name-job {
+  transition: all 0.5s ease-in-out;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.sidebar.active .profile .profile-details .name-job {
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar .profile .profile-details .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.sidebar .profile .profile-details .job {
+  font-size: 12px;
+  color: var(--text-color);
+}
+
+.sidebar .profile .profile-details img {
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar.active .profile .profile-details img {
+  transition: all 0.5s ease-in-out;
+
+  opacity: 1;
+}
+
+.content-text {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-size: 24px;
+  font-weight: 400;
+}
